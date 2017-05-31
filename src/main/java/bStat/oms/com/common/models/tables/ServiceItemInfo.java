@@ -1,5 +1,7 @@
 package bStat.oms.com.common.models.tables;
 
+import bStat.oms.com.common.enums.ServiceType;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
@@ -35,7 +37,7 @@ public class ServiceItemInfo {
     private String description;
 
     @Column(name = "service_type")
-    private String serviceType;
+    private ServiceType serviceType;
 
     @Column(name = "status")
     private String status;
@@ -44,7 +46,7 @@ public class ServiceItemInfo {
     private String address;
 
     @Column(name = "committed_by")
-    private String committedby;
+    private String committedBy;
 
     @Column(name = "time_slot")
     private Time timeSlot;
@@ -53,7 +55,7 @@ public class ServiceItemInfo {
     private int daysLeftToDeliver;
 
     @Column(name = "price")
-    private int price;
+    private double price;
 
     @Column(name = "created_on")
     private Date createdOn;
@@ -65,7 +67,7 @@ public class ServiceItemInfo {
     }
 
     public ServiceItemInfo(long id, long orderId, Date dueDate, String title, long orderItemId, long workerId,
-                           String description, String serviceType, String status, String address, String committedby,
+                           String description, ServiceType serviceType, String status, String address, String committedBy,
                            Time timeSlot, int daysLeftToDeliver, int price, Date createdOn, Date updatedOn) {
         this.id = id;
         this.orderId = orderId;
@@ -77,7 +79,7 @@ public class ServiceItemInfo {
         this.serviceType = serviceType;
         this.status = status;
         this.address = address;
-        this.committedby = committedby;
+        this.committedBy = committedBy;
         this.timeSlot = timeSlot;
         this.daysLeftToDeliver = daysLeftToDeliver;
         this.price = price;
@@ -141,11 +143,11 @@ public class ServiceItemInfo {
         this.description = description;
     }
 
-    public String getServiceType() {
+    public ServiceType getServiceType() {
         return serviceType;
     }
 
-    public void setServiceType(String serviceType) {
+    public void setServiceType(ServiceType serviceType) {
         this.serviceType = serviceType;
     }
 
@@ -165,12 +167,12 @@ public class ServiceItemInfo {
         this.address = address;
     }
 
-    public String getCommittedby() {
-        return committedby;
+    public String getCommittedBy() {
+        return committedBy;
     }
 
-    public void setCommittedby(String committedby) {
-        this.committedby = committedby;
+    public void setCommittedBy(String committedBy) {
+        this.committedBy = committedBy;
     }
 
     public Time getTimeSlot() {
@@ -189,7 +191,7 @@ public class ServiceItemInfo {
         this.daysLeftToDeliver = daysLeftToDeliver;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

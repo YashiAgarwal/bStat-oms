@@ -16,21 +16,15 @@ public class Purchaser_Customer {
     private long customerId;
 
     @Column(name = "email_id")
-    private long emailId;
-
-    @Column(name = "created_on")
-    private Date createdOn;
-
-    @Column(name = "updated_on")
-    private Date updatedOn;
+    private String emailId;
 
     @Column(name = "tin_number")
-    private int tinNumber;
+    private String tinNumber;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "bank-details")
+    @Column(name = "bank_details")
     private String bankDetails;
 
     @Column(name = "primary_person")
@@ -42,8 +36,8 @@ public class Purchaser_Customer {
     @Column(name = "phone_number")
     private int phoneNumber;
 
-    @Column(name = "proprieter_name")
-    private String proprieterName;
+    @Column(name = "proprietor_name")
+    private String proprietorName;
 
     @Column(name = "company_name")
     private String companyName;
@@ -51,11 +45,17 @@ public class Purchaser_Customer {
     @Column(name = "score")
     private int score;
 
+    @Column(name = "created_on")
+    private Date createdOn;
+
+    @Column(name = "updated_on")
+    private Date updatedOn;
+
     public Purchaser_Customer() {
     }
 
-    public Purchaser_Customer(long customerId, long emailId, Date createdOn, Date updatedOn, int tinNumber, String description,
-                              String bankDetails, String primaryPerson, String address, int phoneNumber, String proprieterName,
+    public Purchaser_Customer(long customerId, String emailId, Date createdOn, Date updatedOn, String tinNumber, String description,
+                              String bankDetails, String primaryPerson, String address, int phoneNumber, String proprietorName,
                               String companyName, int score) {
         this.customerId = customerId;
         this.emailId = emailId;
@@ -67,7 +67,7 @@ public class Purchaser_Customer {
         this.primaryPerson = primaryPerson;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.proprieterName = proprieterName;
+        this.proprietorName = proprietorName;
         this.companyName = companyName;
         this.score = score;
     }
@@ -80,11 +80,11 @@ public class Purchaser_Customer {
         this.customerId = customerId;
     }
 
-    public long getEmailId() {
+    public String getEmailId() {
         return emailId;
     }
 
-    public void setEmailId(long emailId) {
+    public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
 
@@ -104,11 +104,11 @@ public class Purchaser_Customer {
         this.updatedOn = updatedOn;
     }
 
-    public int getTinNumber() {
+    public String getTinNumber() {
         return tinNumber;
     }
 
-    public void setTinNumber(int tinNumber) {
+    public void setTinNumber(String tinNumber) {
         this.tinNumber = tinNumber;
     }
 
@@ -152,12 +152,12 @@ public class Purchaser_Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getProprieterName() {
-        return proprieterName;
+    public String getProprietorName() {
+        return proprietorName;
     }
 
-    public void setProprieterName(String proprieterName) {
-        this.proprieterName = proprieterName;
+    public void setProprietorName(String proprietorName) {
+        this.proprietorName = proprietorName;
     }
 
     public String getCompanyName() {

@@ -24,7 +24,7 @@ public class Refunds {
     private int quantity;
 
     @Column(name = "refund_mode")
-    private String refundMode;
+    private String refundMode;      //todo can make enum
 
     @Column(name = "refund_amount")
     private int refundAmount;

@@ -19,7 +19,7 @@ public class Sellers{
     private long emailId;
 
     @Column(name = "tin_number")
-    private long tinNumber;
+    private String tinNumber;
 
     @Column(name = "primary_person")
     private String primaryPerson;
@@ -28,19 +28,19 @@ public class Sellers{
     private String sellerName;
 
     @Column(name = "score")
-    private int score;
+    private double score;
 
     @Column(name = "address")
     private String address;
 
     @Column(name = "phone_number")
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "bank")
-    private String bank;
+    @Column(name = "bank_id")
+    private long bankId;
 
     @Column(name = "business_name")
     private String businessName;
@@ -54,8 +54,8 @@ public class Sellers{
     public Sellers() {
     }
 
-    public Sellers(long sellerId, long emailId, Date createdOn, Date updatedOn, int tinNumber, String primaryPerson,
-                   String sellerName, int score, String address, int phoneNumber, String description, String bank,
+    public Sellers(long sellerId, long emailId, Date createdOn, Date updatedOn, String tinNumber, String primaryPerson,
+                   String sellerName, int score, String address, String phoneNumber, String description, long bankId,
                    String businessName) {
         this.sellerId = sellerId;
         this.emailId = emailId;
@@ -68,7 +68,7 @@ public class Sellers{
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.description = description;
-        this.bank = bank;
+        this.bankId = bankId;
         this.businessName = businessName;
     }
 
@@ -104,11 +104,11 @@ public class Sellers{
         this.updatedOn = updatedOn;
     }
 
-    public long getTinNumber() {
+    public String getTinNumber() {
         return tinNumber;
     }
 
-    public void setTinNumber(long tinNumber) {
+    public void setTinNumber(String tinNumber) {
         this.tinNumber = tinNumber;
     }
 
@@ -128,7 +128,7 @@ public class Sellers{
         this.sellerName = sellerName;
     }
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 
@@ -144,11 +144,11 @@ public class Sellers{
         this.address = address;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -160,12 +160,12 @@ public class Sellers{
         this.description = description;
     }
 
-    public String getBank() {
-        return bank;
+    public long getBankId() {
+        return bankId;
     }
 
-    public void setBank(String bank) {
-        this.bank = bank;
+    public void setBankId(long bankId) {
+        this.bankId = bankId;
     }
 
     public String getBusinessName() {

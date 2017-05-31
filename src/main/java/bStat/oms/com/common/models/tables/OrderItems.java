@@ -34,10 +34,10 @@ public class OrderItems {
     private int quantity;
 
     @Column(name = "price_per_unit")
-    private int pricePerUnit;
+    private double pricePerUnit;
 
     @Column(name = "price_per_unit_of_measurement")
-    private int pricePerUnitOfMeasurement;
+    private double pricePerUnitOfMeasurement;
 
     @Column(name = "offer_id")
     private long offerId;       //order item level offers only
@@ -131,7 +131,7 @@ public class OrderItems {
         this.quantity = quantity;
     }
 
-    public int getPricePerUnit() {
+    public double getPricePerUnit() {
         return pricePerUnit;
     }
 
@@ -139,7 +139,7 @@ public class OrderItems {
         this.pricePerUnit = pricePerUnit;
     }
 
-    public int getPricePerUnitOfMeasurement() {
+    public double getPricePerUnitOfMeasurement() {
         return pricePerUnitOfMeasurement;
     }
 

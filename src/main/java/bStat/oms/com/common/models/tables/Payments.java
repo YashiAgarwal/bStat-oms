@@ -1,5 +1,7 @@
 package bStat.oms.com.common.models.tables;
 
+import bStat.oms.com.common.enums.Flow;
+import bStat.oms.com.common.enums.PartyType;
 import bStat.oms.com.common.enums.PaymentMode;
 import bStat.oms.com.common.enums.PaymentStatus;
 
@@ -31,10 +33,12 @@ public class Payments {
     private long partyId;       // can be purchaser id/seller id
 
     @Column(name = "party_type")
-    private long party_type;        // purchaser / seller
+    @Enumerated(EnumType.STRING)
+    private PartyType party_type;        // purchaser / seller
 
     @Column(name = "flow")
-    private long flow;      // Debit / credit
+    @Enumerated(EnumType.STRING)
+    private Flow flow;      // Debit / credit
 
     @Column(name = "comments")
     private String comments;
@@ -48,16 +52,16 @@ public class Payments {
     private PaymentMode paymentMode;
 
     @Column(name = "payment_date")
-    private long paymentDate;
+    private Date paymentDate;
 
     @Column(name = "total_amount_paid")
     private long totalAmountPaid;       //total amount paid till now for this order
 
     @Column(name = "order_amount")
-    private long orderAmount;
+    private double orderAmount;
 
     @Column(name = "amount_paid")
-    private long amountPaid;
+    private double amountPaid;
 
     @Column(name = "created_on")
     private Date createdOn;
@@ -68,9 +72,9 @@ public class Payments {
     public Payments() {
     }
 
-    public Payments(long id, long order_id, long bill_number, long referenceNumber, long partyId, long party_type,
-                    long flow, String comments, PaymentStatus paymentStatus, PaymentMode paymentMode,
-                    long paymentDate, long totalAmountPaid, long orderAmount, long amountPaid, Date createdOn,
+    public Payments(long id, long order_id, long bill_number, long referenceNumber, long partyId, PartyType party_type,
+                    Flow flow, String comments, PaymentStatus paymentStatus, PaymentMode paymentMode,
+                    Date paymentDate, long totalAmountPaid, long orderAmount, long amountPaid, Date createdOn,
                     Date updatedOn) {
         this.id = id;
         this.order_id = order_id;
@@ -130,19 +134,19 @@ public class Payments {
         this.partyId = partyId;
     }
 
-    public long getParty_type() {
+    public PartyType getParty_type() {
         return party_type;
     }
 
-    public void setParty_type(long party_type) {
+    public void setParty_type(PartyType party_type) {
         this.party_type = party_type;
     }
 
-    public long getFlow() {
+    public Flow getFlow() {
         return flow;
     }
 
-    public void setFlow(long flow) {
+    public void setFlow(Flow flow) {
         this.flow = flow;
     }
 
@@ -170,11 +174,11 @@ public class Payments {
         this.paymentMode = paymentMode;
     }
 
-    public long getPaymentDate() {
+    public Date getPaymentDate() {
         return paymentDate;
     }
 
-    public void setPaymentDate(long paymentDate) {
+    public void setPaymentDate(Date paymentDate) {
         this.paymentDate = paymentDate;
     }
 
@@ -186,7 +190,7 @@ public class Payments {
         this.totalAmountPaid = totalAmountPaid;
     }
 
-    public long getOrderAmount() {
+    public double getOrderAmount() {
         return orderAmount;
     }
 
@@ -194,7 +198,7 @@ public class Payments {
         this.orderAmount = orderAmount;
     }
 
-    public long getAmountPaid() {
+    public double getAmountPaid() {
         return amountPaid;
     }
 
