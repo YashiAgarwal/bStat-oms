@@ -38,17 +38,17 @@ public class Address {
     @JsonProperty("landmark")
     private String landmark;
 
-    @JsonProperty("creation_date")
-    private Date creationDate;
+    @JsonProperty("creation_on")
+    private Date creationOn;
 
-    @JsonProperty("last_modified")
-    private Date lastModified;
+    @JsonProperty("modified_on")
+    private Date modifiedOn;
 
     public Address() {
     }
 
     public Address(String addressLine1, String addressLine2, String state, String city,
-                   String country, String pincode, String landmark, Date creationDate, Date lastModified) {
+                   String country, String pincode, String landmark, Date creationOn, Date modifiedOn) {
         this.addressLine1 = addressLine1;
         this.addressLine2 = addressLine2;
         this.state = state;
@@ -56,8 +56,8 @@ public class Address {
         this.country = country;
         this.pincode = pincode;
         this.landmark = landmark;
-        this.creationDate = creationDate;
-        this.lastModified = lastModified;
+        this.creationOn = creationOn;
+        this.modifiedOn = modifiedOn;
     }
 
     public long getId() {
@@ -124,19 +124,19 @@ public class Address {
         this.landmark = landmark;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public Date getCreationOn() {
+        return creationOn;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setCreationOn(Date creationOn) {
+        this.creationOn = creationOn;
     }
 
-    public Date getLastModified() {
-        return lastModified;
+    public Date getModifiedOn() {
+        return modifiedOn;
     }
 
-    public void setLastModified(Date lastModified) {
-        this.lastModified = lastModified;
+    public void setModifiedOn(Date modifiedOn) {
+        this.modifiedOn = modifiedOn;
     }
 }

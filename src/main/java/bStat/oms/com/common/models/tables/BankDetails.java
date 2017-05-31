@@ -17,26 +17,26 @@ public class BankDetails {
     private long id;
 
     @Column(name = "account_holder_id")
-    private long accountHolderId;
+    private long accountHolderId;   // here it will be seller/customer id
 
     @Column(name = "account_holder_type")
     @Enumerated(EnumType.STRING)
     private AccountHolderType accountHolderType;
 
     @Column(name = "account_name")
-    private long accountName;
+    private String accountName;
 
     @Column(name = "account_number")
-    private long accountNumber;
+    private String accountNumber;
 
     @Column(name = "IFSC_code")
-    private long IFSCCode;
+    private String IFSCCode;
 
     @Column(name = "branch_name")
-    private long branchName;
+    private String branchName;
 
     @Column(name = "branch_city")
-    private long branchCity;
+    private String branchCity;
 
     @Column(name = "created_on")
     private Date createdOn;
@@ -47,8 +47,8 @@ public class BankDetails {
     public BankDetails() {
     }
 
-    public BankDetails(long id, long accountHolderId, AccountHolderType accountHolderType, long accountName,
-                       long accountNumber, long IFSCCode, long branchName, long branchCity, Date createdOn, Date updatedOn) {
+    public BankDetails(long id, long accountHolderId, AccountHolderType accountHolderType, String accountName,
+                       String accountNumber, String IFSCCode, String branchName, String branchCity, Date createdOn, Date updatedOn) {
         this.id = id;
         this.accountHolderId = accountHolderId;
         this.accountHolderType = accountHolderType;
@@ -85,43 +85,43 @@ public class BankDetails {
         this.accountHolderType = accountHolderType;
     }
 
-    public long getAccountName() {
+    public String getAccountName() {
         return accountName;
     }
 
-    public void setAccountName(long accountName) {
+    public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
 
-    public long getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(long accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public long getIFSCCode() {
+    public String getIFSCCode() {
         return IFSCCode;
     }
 
-    public void setIFSCCode(long IFSCCode) {
+    public void setIFSCCode(String IFSCCode) {
         this.IFSCCode = IFSCCode;
     }
 
-    public long getBranchName() {
+    public String getBranchName() {
         return branchName;
     }
 
-    public void setBranchName(long branchName) {
+    public void setBranchName(String branchName) {
         this.branchName = branchName;
     }
 
-    public long getBranchCity() {
+    public String getBranchCity() {
         return branchCity;
     }
 
-    public void setBranchCity(long branchCity) {
+    public void setBranchCity(String branchCity) {
         this.branchCity = branchCity;
     }
 

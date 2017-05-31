@@ -15,8 +15,8 @@ public class BillDetails {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "purchase_Id")
-    private long purchaseId;
+    @Column(name = "purchaser_Id")
+    private long purchaserId;
 
     @Column(name = "dated")
     private Date dated;
@@ -57,11 +57,11 @@ public class BillDetails {
     public BillDetails() {
     }
 
-    public BillDetails(long id, long purchaseId, Date createdOn, Date dated, Date updatedOn, int amount, String comments,
+    public BillDetails(long id, long purchaserId, Date createdOn, Date dated, Date updatedOn, int amount, String comments,
                        String inNameOf, String address, int tax, int packingCharges, int shippingCharges, int netAmountToPay,
                        int discounts) {
         this.id = id;
-        this.purchaseId = purchaseId;
+        this.purchaserId = purchaserId;
         this.createdOn = createdOn;
         this.dated = dated;
         this.updatedOn = updatedOn;
@@ -84,12 +84,12 @@ public class BillDetails {
         this.id = id;
     }
 
-    public long getPurchaseId() {
-        return purchaseId;
+    public long getPurchaserId() {
+        return purchaserId;
     }
 
-    public void setPurchaseId(long purchaseId) {
-        this.purchaseId = purchaseId;
+    public void setPurchaserId(long purchaserId) {
+        this.purchaserId = purchaserId;
     }
 
     public Date getCreatedOn() {
