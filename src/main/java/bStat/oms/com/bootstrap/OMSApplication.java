@@ -33,7 +33,7 @@ public class OMSApplication extends Application<OMSConfiguration> {
     }
 
     private final HibernateBundle<OMSConfiguration> hibernate = new HibernateBundle<OMSConfiguration>(Address.class,
-            BankDetails.class, BillDetails.class, Offers.class, OrderItems.class, Orders.class,
+            BankDetails.class, InvoiceDetails.class, Offers.class, OrderItems.class, Orders.class,
             Payments.class, Purchaser_Customer.class, Refunds.class, Sellers.class, ServiceItemInfo.class) {
         @Override
         public DataSourceFactory getDataSourceFactory(OMSConfiguration omsConfiguration) {

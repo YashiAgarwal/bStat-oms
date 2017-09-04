@@ -1,6 +1,5 @@
 package bStat.oms.com.common.dao;
 
-import bStat.oms.com.common.models.tables.BillDetails;
 import bStat.oms.com.common.models.tables.Offers;
 import com.google.inject.Inject;
 import io.dropwizard.hibernate.AbstractDAO;

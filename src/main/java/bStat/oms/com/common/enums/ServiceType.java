@@ -3,6 +3,6 @@ package bStat.oms.com.common.enums;
 public enum ServiceType {
     INSTALLATION,
     UNINSTALLATION,
-    TECHVISIT,
+    TECH_VISIT,
     SERVICE
 }
