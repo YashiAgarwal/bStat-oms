@@ -1,6 +1,8 @@
 package bStat.oms.com.common.models.tables;
 
 import bStat.oms.com.common.enums.OrderStatus;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -9,22 +11,20 @@ import java.util.Date;
  * Created by Yashi Agarwal on 23-05-2017.
  */
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "orders")
 public class Orders {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private String id;
 
     @Column(name = "purchaser_id")
-    private long purchaserId;
+    private String purchaserId;
 
     @Column(name = "bill_Id")
-    private long billId;
-
-    @Column(name = "comments")
-    private String comments;
+    private String billId;
 
     @Column(name = "order_status")
     @Enumerated(EnumType.STRING)
@@ -40,142 +40,23 @@ public class Orders {
     private Date actualDeliveryDate;
 
     @Column(name = "offer_id")
-    private long offerId;       //order level offers only
+    private String offerId;       //order level offers only
 
     @Column(name = "payment_id")
-    private long paymentId;
+    private String paymentId;
 
     @Column(name = "order_amount")
-    private int orderAmount;
+    private double orderAmount;
+
+    @Column(name = "worker_id")
+    private String workerId;
+
+    @Column(name = "comments")
+    private String comments;
 
     @Column(name = "created_on")
     private Date createdOn;
 
     @Column(name = "updated_on")
     private Date updatedOn;
-
-    public Orders() {
-    }
-
-    public Orders(long id, long purchaserId, Date createdOn, Date updatedOn, long billId, String comments, OrderStatus orderStatus,
-                  Date orderDate, Date expectedDeliveryDate, Date actualDeliveryDate, long offerId, long paymentId,
-                  int orderAmount) {
-        this.id = id;
-        this.purchaserId = purchaserId;
-        this.createdOn = createdOn;
-        this.updatedOn = updatedOn;
-        this.billId = billId;
-        this.comments = comments;
-        this.orderStatus = orderStatus;
-        this.orderDate = orderDate;
-        this.expectedDeliveryDate = expectedDeliveryDate;
-        this.actualDeliveryDate = actualDeliveryDate;
-        this.offerId = offerId;
-        this.paymentId = paymentId;
-        this.orderAmount = orderAmount;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getPurchaserId() {
-        return purchaserId;
-    }
-
-    public void setPurchaserId(long purchaserId) {
-        this.purchaserId = purchaserId;
-    }
-
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public Date getUpdatedOn() {
-        return updatedOn;
-    }
-
-    public void setUpdatedOn(Date updatedOn) {
-        this.updatedOn = updatedOn;
-    }
-
-    public long getBillId() {
-        return billId;
-    }
-
-    public void setBillId(long billId) {
-        this.billId = billId;
-    }
-
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public Date getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public Date getExpectedDeliveryDate() {
-        return expectedDeliveryDate;
-    }
-
-    public void setExpectedDeliveryDate(Date expectedDeliveryDate) {
-        this.expectedDeliveryDate = expectedDeliveryDate;
-    }
-
-    public Date getActualDeliveryDate() {
-        return actualDeliveryDate;
-    }
-
-    public void setActualDeliveryDate(Date actualDeliveryDate) {
-        this.actualDeliveryDate = actualDeliveryDate;
-    }
-
-    public long getOfferId() {
-        return offerId;
-    }
-
-    public void setOfferId(long offerId) {
-        this.offerId = offerId;
-    }
-
-    public long getPaymentId() {
-        return paymentId;
-    }
-
-    public void setPaymentId(long paymentId) {
-        this.paymentId = paymentId;
-    }
-
-    public int getOrderAmount() {
-        return orderAmount;
-    }
-
-    public void setOrderAmount(int orderAmount) {
-        this.orderAmount = orderAmount;
-    }
 }
